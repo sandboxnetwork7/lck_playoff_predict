@@ -267,7 +267,7 @@ def main():
     # 프로그레스 바
     progress = min(st.session_state.current_step / 11, 1.0)
     st.progress(progress)
-    st.markdown(f"<h4 style='text-align: center;'>진행률: {st.session_state.current_step}/12</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h4 style='text-align: center;'>진행률: {st.session_state.current_step}/11</h4>", unsafe_allow_html=True)
     
     # 현재 단계에 따른 질문 표시
     if st.session_state.current_step == 1:
@@ -533,7 +533,9 @@ def main():
             if logo:
                 st.markdown(f"""
                 <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                    <img src="data:image/svg+xml;base64,{get_base64_image(logo)}" style="max-height: 150px; max-width: 200px; object-fit: contain;">
+                    <div style="background: white; border-radius: 50%; padding: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+                        <img src="data:image/svg+xml;base64,{get_base64_image(logo)}" style="max-height: 120px; max-width: 160px; object-fit: contain;">
+                    </div>
                 </div>
                 """, unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align: center; color: gold;'>{champion}</h2>", unsafe_allow_html=True)
